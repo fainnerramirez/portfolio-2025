@@ -66,15 +66,15 @@ export default function Navbar() {
             <Button
               bg={"trasnparent"}
               pointerEvents={"none"}
-              size={{ base: "lg" }}
+              size={{ base: "md" }}
             >
-              <SiOpenai size={"lg"} />
+              <SiOpenai size={"md"} />
             </Button>
             <Heading
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
-              fontWeight={900}
+              fontWeight={600}
               color={useColorModeValue("gray.800", "white")}
-              fontSize={{ base: "md", md: "md", lg: "2xl" }}
+              fontSize={{ base: "md", md: "md", lg: "xl" }}
             >
               Fainner Ramírez
             </Heading>

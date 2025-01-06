@@ -1,4 +1,4 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
 
 type Props = {
   title: string;
@@ -10,7 +10,7 @@ export const TitleSection: React.FC<Props> = ({ title, subtitle }) => {
     <Box>
       <Heading
         borderWidth={5}
-        borderColor={"blackAlpha.900"}
+        borderColor={useColorModeValue("blackAlpha.900", "gray.600")}
         borderTop={"none"}
         borderLeft={"none"}
         borderRight={"none"}
