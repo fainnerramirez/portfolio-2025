@@ -1,0 +1,27 @@
+.dark-box {
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  background-color: #1a202c4a;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.light-box {
+  -webkit-box-shadow: 0px 0px 10px 0px rgb(222, 209, 192);
+  -moz-box-shadow: 0px 0px 10px 0px rgb(222, 209, 192);
+  box-shadow: 0px 0px 10px 0px rgb(222, 209, 192);
+  background-color: #f0e7db;
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.09);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
