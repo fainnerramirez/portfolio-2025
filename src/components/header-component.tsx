@@ -27,6 +27,7 @@ import { SiOpenai } from "react-icons/si";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import "../style/style.css";
+import { Link, Link as NewLink } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -47,26 +48,14 @@ export default function Navbar() {
         align={"center"}
         alignItems={"center"}
       >
-        <Flex
-          flex={{ base: 1, md: "auto" }}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={"ghost"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex flex={{ base: 1 }} justify={{ base: "start", md: "start" }}>
           <HStack display={"flex"} alignItems={"center"}>
             <Button
               bg={"trasnparent"}
               pointerEvents={"none"}
               size={{ base: "md" }}
+              p={0}
+              m={0}
             >
               <SiOpenai size={"md"} />
             </Button>
@@ -74,7 +63,10 @@ export default function Navbar() {
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontWeight={600}
               color={useColorModeValue("gray.800", "white")}
-              fontSize={{ base: "md", md: "md", lg: "xl" }}
+              fontSize={{ base: "sm", md: "md", lg: "xl" }}
+              noOfLines={1}
+              as="a"
+              href="/"
             >
               Fainner Ramírez
             </Heading>
@@ -89,16 +81,12 @@ export default function Navbar() {
           </Flex>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
+        <HStack justify={"end"} direction={"row"} spacing={1}>
           <Button
             border={"none"}
             size={"md"}
-            bg={colorMode === "light" ? "purple.500" : "yellow.500"}
+            bg={colorMode === "light" ? "purple.500" : "#FBD38D"}
+            color={colorMode === "light" ? "white" : "black"}
             onClick={toggleColorMode}
             _hover={{
               bg: colorMode === "light" ? "purple.500" : "yellow.500",
@@ -115,7 +103,26 @@ export default function Navbar() {
               <LuSunMoon fontSize={20} />
             )}
           </Button>
-        </Stack>
+
+          <Flex
+            flex={{ base: 1, md: "auto" }}
+            display={{ base: "flex", md: "none" }}
+            p={2}
+          >
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              variant={"ghost"}
+              aria-label={"Toggle Navigation"}
+            />
+          </Flex>
+        </HStack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -138,8 +145,8 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <Box
                 as="a"
+                href={navItem.href}
                 p={2}
-                href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -290,36 +297,10 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "Proyectos",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    href: "proyects",
   },
   {
     label: "Posts",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "GitHub",
-    href: "#",
+    href: "posts",
   },
 ];

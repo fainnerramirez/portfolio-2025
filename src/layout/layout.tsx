@@ -1,20 +1,37 @@
-import { Box, Heading, useColorModeValue } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  useColorMode,
+  useColorModeValue,
+} from "@chakra-ui/react";
 import Navbar from "../components/header-component";
-import { useEffect } from "react";
+import { ModelContainer } from "../components/model-container";
 
 interface Props {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <Box
       width={"100vw"}
       bg={useColorModeValue("rgb(240, 231, 219)", "gray.800")}
       color={useColorModeValue("gray.600", "rgb(240, 231, 219)")}
     >
-      <Box width={"60%"} margin={"auto"}>
+      <Box width={{ base: "90%", lg: "60%" }} m={"auto"}>
         <Navbar />
+      </Box>
+      <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
+        <Box
+          width={{ base: "80%", md: 600 }}
+          m={["auto", 10]}
+          height={400}
+          className={colorMode === "light" ? "light-box" : "dark-box"}
+        >
+          <ModelContainer />
+        </Box>
       </Box>
       {children}
       <Box mt={300} p={10}>
@@ -22,7 +39,7 @@ const Layout: React.FC<Props> = ({ children }) => {
           textAlign={"center"}
           fontWeight={"normal"}
           as={"h3"}
-          size={"sm"}
+          size={{ base: "xs", md: "xs" }}
           color={useColorModeValue("gray.500", "gray.400")}
         >
           © {new Date().getFullYear().toString()} - Fainner Ramírez. Todos los

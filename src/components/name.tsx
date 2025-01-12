@@ -12,6 +12,7 @@ import photo from "../assets/user.jpg";
 export const Name: React.FC = () => {
   return (
     <HStack
+      flexDir={{ base: "column", md: "row" }}
       width={"full"}
       display={"flex"}
       justifyContent={"space-evenly"}

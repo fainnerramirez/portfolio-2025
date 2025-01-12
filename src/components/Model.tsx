@@ -13,7 +13,7 @@ const Model = () => {
     }
   });
 
-  return <primitive object={scene} scale={1.5} ref={modelRef} />;
+  return <primitive object={scene} scale={1.2} ref={modelRef} />;
 };
 
 export default Model;

@@ -12,6 +12,7 @@ const theme = extendTheme({
     heading: `'M PLUS Rounded 1c', sans-serif;`,
     body: `'M PLUS Rounded 1c', sans-serif;`,
   },
+  initialColorMode: "dark",
 });
 
 export default theme;
