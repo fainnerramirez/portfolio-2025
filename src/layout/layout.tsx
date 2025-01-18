@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       bg={useColorModeValue("rgb(240, 231, 219)", "gray.800")}
       color={useColorModeValue("gray.600", "rgb(240, 231, 219)")}
     >
-      <Box width={{ base: "90%", lg: "60%" }} m={"auto"}>
+      <Box width={{ base: "100%", lg: "60%" }} m={"auto"}>
         <Navbar />
       </Box>
       <Box display={"flex"} justifyContent={"center"} alignItems={"center"}>
