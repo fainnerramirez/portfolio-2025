@@ -59,13 +59,13 @@ const ProjectsPage = () => {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -10, opacity: 0 }}
       transition={{ duration: 1.5 }}
-      style={{ marginTop: 10 }}
+      style={{ marginTop: 10, padding: "10px" }}
     >
       <Container maxW={"container.md"}>
         <TitleSection title="Proyectos"></TitleSection>
         <Flex
           mt="5"
-          gap={2}
+          gap={5}
           flexWrap={"wrap"}
           justifyContent={"center"}
           alignItems={"center"}

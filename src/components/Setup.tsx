@@ -18,6 +18,7 @@ import { Experience } from "./Experience";
 import { Section } from "./section";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
+import { motion } from "motion/react"
 
 const dataExperience = [
   {
@@ -29,7 +30,7 @@ const dataExperience = [
     },
   },
   {
-    year: "Agosto 2023 - Actualidad",
+    year: "Agosto 2023 - Enero 2025",
     description: "FullStack Developer",
     link: {
       text: "Godoy Cordoba Abogados SAS",
@@ -63,9 +64,14 @@ const socialNetworks = [
 ];
 
 export const Setup = () => {
-  const { colorMode } = useColorMode();
 
   return (
+    <motion.div
+      initial={{ y: 10, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -10, opacity: 0 }}
+      transition={{ duration: 1.5 }}
+    >
     <Stack
       direction={{ base: "column", lg: "column" }}
       width={{ base: "100%", md: "40%" }}
@@ -166,5 +172,6 @@ export const Setup = () => {
         </Box>
       </Box>
     </Stack>
+    </motion.div>
   );
 };
