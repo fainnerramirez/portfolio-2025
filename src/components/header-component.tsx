@@ -1,33 +1,32 @@
 import {
-  Box,
-  Flex,
-  Text,
-  IconButton,
-  Button,
-  Stack,
-  Collapse,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  useColorModeValue,
-  useBreakpointValue,
-  useDisclosure,
-  HStack,
-  Heading,
-  useColorMode,
-} from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  CloseIcon,
+  HamburgerIcon,
 } from "@chakra-ui/icons";
-import { SiOpenai } from "react-icons/si";
+import {
+  Box,
+  Button,
+  Collapse,
+  Flex,
+  HStack,
+  Heading,
+  Icon,
+  IconButton,
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+  Stack,
+  Text,
+  useBreakpointValue,
+  useColorMode,
+  useColorModeValue,
+  useDisclosure,
+} from "@chakra-ui/react";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
+import { SiOpenai } from "react-icons/si";
 import "../style/style.css";
-import { Link, Link as NewLink } from "react-router-dom";
 
 export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -35,7 +34,7 @@ export default function Navbar() {
 
   return (
     <Box
-      bg={useColorModeValue("rgb(240, 231, 219)", "gray.800")}
+      bg={useColorModeValue("rgb(240, 231, 219)", "transparent")}
       color={useColorModeValue("gray.600", "rgb(240, 231, 219)")}
     >
       <Flex
@@ -45,7 +44,6 @@ export default function Navbar() {
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
         alignItems={"center"}
       >
         <Flex flex={{ base: 1 }} justify={{ base: "start", md: "start" }}>
@@ -67,6 +65,9 @@ export default function Navbar() {
               noOfLines={1}
               as="a"
               href="/"
+              _hover={{
+                color: "teal.400"
+              }}
             >
               Fainner Ramírez
             </Heading>

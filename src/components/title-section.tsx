@@ -9,10 +9,10 @@ type Props = {
 export const TitleSection: React.FC<Props> = ({ title, subtitle }) => {
   return (
     <motion.div
-      initial={{ y: 10, opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -10, opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      exit={{ y: -20, opacity: 0 }}
+      transition={{ duration: 1 }}
     >
       <Box display={"flex"} justifyContent={"start"} mt={10}>
         <Heading

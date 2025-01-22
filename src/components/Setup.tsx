@@ -4,21 +4,18 @@ import {
   Link,
   Stack,
   Text,
-  useColorMode,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { Iam } from "./iam";
-import "../style/style.css";
-import { ModelContainer } from "./model-container";
-import { Name } from "./name";
-import { TitleSection } from "./title-section";
-import { IoIosArrowForward } from "react-icons/io";
-import { Experience } from "./Experience";
-import { Section } from "./section";
+import { motion } from "motion/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { motion } from "motion/react"
+import { IoIosArrowForward } from "react-icons/io";
+import "../style/style.css";
+import { Experience } from "./Experience";
+import { Iam } from "./iam";
+import { Name } from "./name";
+import { Section } from "./section";
+import { TitleSection } from "./title-section";
 
 const dataExperience = [
   {
@@ -67,10 +64,10 @@ export const Setup = () => {
 
   return (
     <motion.div
-      initial={{ y: 10, opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -10, opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      exit={{ y: -20, opacity: 0 }}
+      transition={{ duration: 1 }}
     >
     <Stack
       direction={{ base: "column", lg: "column" }}

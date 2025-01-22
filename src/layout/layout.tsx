@@ -1,6 +1,7 @@
 import {
   Box,
   Heading,
+  Text,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -29,6 +30,8 @@ const Layout: React.FC<Props> = ({ children }) => {
           m={["auto", 10]}
           height={400}
           className={colorMode === "light" ? "light-box" : "dark-box"}
+          position={"relative"}
+          top={{base: 100, md: 30}}
         >
           <ModelContainer />
         </Box>
@@ -42,8 +45,8 @@ const Layout: React.FC<Props> = ({ children }) => {
           size={{ base: "xs", md: "xs" }}
           color={useColorModeValue("gray.500", "gray.400")}
         >
-          © {new Date().getFullYear().toString()} - Fainner Ramírez. Todos los
-          derechos reservados
+          <Text noOfLines={1}>© {new Date().getFullYear().toString()} - Fainner Ramírez.</Text>
+         <Text noOfLines={1}>Todos los derechos reservados</Text> 
         </Heading>
       </Box>
     </Box>

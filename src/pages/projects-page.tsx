@@ -3,8 +3,8 @@ import { ProjectItem } from "../components/project-item";
 import { TitleSection } from "../components/title-section";
 
 import { motion } from "motion/react";
-
-import P1 from "../assets/chakraui-charts.png";
+import ChakraUI from "../assets/chakraui-charts.png";
+import testImage from "../assets/works/test.avif";
 
 export type Project = {
   id: number;
@@ -18,47 +18,47 @@ const projects: Project[] = [
     id: 1,
     title: "Chakra UI Charts",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    image: P1,
+    image: testImage,
   },
   {
     id: 2,
     title: "Proyecto 2",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    image: P1,
+    image: testImage,
   },
   {
     id: 3,
     title: "Proyecto 3",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    image: P1,
+    image: testImage,
   },
   {
     id: 4,
     title: "Proyecto 4",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    image: P1,
+    image: testImage,
   },
   {
     id: 5,
     title: "Proyecto 5",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    image: P1,
+    image: testImage,
   },
   {
     id: 6,
     title: "Proyecto 6",
     description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-    image: P1,
+    image: testImage,
   },
 ];
 
 const ProjectsPage = () => {
   return (
     <motion.div
-      initial={{ y: 10, opacity: 0 }}
+      initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      exit={{ y: -10, opacity: 0 }}
-      transition={{ duration: 1.5 }}
+      exit={{ y: -20, opacity: 0 }}
+      transition={{ duration: 1 }}
       style={{ marginTop: 10, padding: "10px" }}
     >
       <Container maxW={"container.md"}>

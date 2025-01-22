@@ -7,14 +7,14 @@ type Props = {
 
 export const ProjectItem: React.FC<Props> = ({ item }) => {
   return (
-    <Card maxW="xs" bg={"transparent"} variant={"unstyled"}>
+    <Card maxW={"xs"} bg={"transparent"} variant={"unstyled"}>
       <CardBody>
         <Image
           src={item.image}
           alt="Imagen de proyecto"
           borderRadius="lg"
           width="100%"
-          height="200"
+          height="170"
           objectFit="cover"
         />
         <Stack mt="3" spacing="1" p={4}>
