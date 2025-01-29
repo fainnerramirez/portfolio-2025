@@ -66,7 +66,7 @@ export default function Navbar() {
               as="a"
               href="/"
               _hover={{
-                color: "teal.400"
+                color: "teal.400",
               }}
             >
               Fainner Ramírez
@@ -105,11 +105,7 @@ export default function Navbar() {
             )}
           </Button>
 
-          <Flex
-            flex={{ base: 1, md: "auto" }}
-            display={{ base: "flex", md: "none" }}
-            p={2}
-          >
+          <Flex flex={{ base: 1, md: "auto" }} display={{ base: "none" }} p={2}>
             <IconButton
               onClick={onToggle}
               icon={
@@ -295,13 +291,4 @@ interface NavItem {
   href?: string;
 }
 
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Proyectos",
-    href: "proyects",
-  },
-  {
-    label: "Posts",
-    href: "posts",
-  },
-];
+const NAV_ITEMS: Array<NavItem> = [];
