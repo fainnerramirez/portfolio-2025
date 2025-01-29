@@ -23,7 +23,7 @@ export const ModelContainer: React.FC = () => {
   return (
     <Box height={"100%"} width={"100%"}>
       {loading ? (
-        <LoaderComponent isLoading={loading} />
+        <LoaderComponent isLoading={loading} size="xl" />
       ) : (
         <Canvas
           dpr={[1, 2]}
