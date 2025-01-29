@@ -3,7 +3,7 @@ import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
 const Model = () => {
-  const { scene } = useGLTF("/src/assets/mac-draco.glb");
+  const { scene } = useGLTF("/public/mac-draco.glb");
   const modelRef = useRef<any>();
 
   // Rotar indefinidamente en cada frame
