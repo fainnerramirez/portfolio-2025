@@ -1,6 +1,5 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
-  Box,
   HStack,
   Link,
   List,
@@ -36,11 +35,14 @@ export const Experience: React.FC<Experiences> = ({ data }) => {
               flexDir={"row"}
               alignItems={"center"}
             >
-              <Stack direction={{ base: "column", md: "row" }} mt={{base: 4, md: 0}}>
-             <HStack spacing={{base: 1, md: 2}}>
-             <ListIcon as={MdOutlineWorkOutline} />
-             <Text fontWeight={"bold"}>{item.year}</Text>
-             </HStack>
+              <Stack
+                direction={{ base: "column", md: "row" }}
+                mt={{ base: 4, md: 0 }}
+              >
+                <HStack spacing={{ base: 1, md: 2 }}>
+                  <ListIcon as={MdOutlineWorkOutline} />
+                  <Text fontWeight={"bold"}>{item.year}</Text>
+                </HStack>
                 <Text> </Text>
                 <Text>{item.description}</Text>
                 <Text>
