@@ -1,12 +1,9 @@
-import { Box, useColorMode, useColorModeValue } from "@chakra-ui/react";
-import { Setup } from "../components/Setup";
+import { Box, useColorModeValue } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
-import { ModelContainer } from "../components/model-container";
+import { Setup } from "../components/Setup";
 import "../style/style.css";
 
 const HomePage = () => {
-  const { colorMode } = useColorMode();
-
   return (
     <Box
       bg={useColorModeValue("#f0e7db", "gray.800")}

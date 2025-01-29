@@ -1,9 +1,8 @@
-import { Box, Container, Flex, Heading, Stack } from "@chakra-ui/react";
+import { Container, Flex } from "@chakra-ui/react";
 import { ProjectItem } from "../components/project-item";
 import { TitleSection } from "../components/title-section";
 
 import { motion } from "motion/react";
-import ChakraUI from "../assets/chakraui-charts.png";
 import testImage from "../assets/works/test.avif";
 
 export type Project = {
