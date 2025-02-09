@@ -37,8 +37,8 @@ const dataExperience = [
     year: "Febrero 2025 - Actualidad",
     description: "Frontend Developer Specialist",
     link: {
-      text: "Dentsu Inc",
-      href: "https://www.dentsu.com/es/es/",
+      text: "Dentsu Creative",
+      href: "https://www.dentsucreative.com/es",
     },
   },
 ];
