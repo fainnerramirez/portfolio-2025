@@ -96,10 +96,10 @@ export const Setup = () => {
           <Box>
             <TitleSection title="Bio" />
             <Section>
-              Soy un desarrollador de software con más de 3 años de experiencia,
-              especializado en el desarrollo de soluciones web innovadoras y
-              escalables. A lo largo de mi carrera, he trabajado con tecnologías
-              punteras como:{" "}
+              Soy estudiante de ing. de software y desarrollador de software con
+              más de 3 años de experiencia, especializado en el desarrollo de
+              soluciones web innovadoras y escalables. A lo largo de mi carrera,
+              he trabajado con tecnologías punteras como:{" "}
               <Text display={"flex"} gap={1}>
                 <Text textColor={useColorModeValue("blue.400", "pink.400")}>
                   TypeScript,
