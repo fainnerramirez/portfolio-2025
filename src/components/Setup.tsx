@@ -9,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { motion } from "motion/react";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { IoIosArrowForward } from "react-icons/io";
 import "../style/style.css";
 import { Experience } from "./Experience";
 import { Iam } from "./iam";
@@ -32,6 +31,14 @@ const dataExperience = [
     link: {
       text: "Godoy Cordoba Abogados SAS",
       href: "https://godoycordoba.com/",
+    },
+  },
+  {
+    year: "Febrero 2025 - Actualidad",
+    description: "Frontend Developer Specialist",
+    link: {
+      text: "Dentsu Inc",
+      href: "https://www.dentsu.com/es/es/",
     },
   },
 ];
@@ -121,7 +128,7 @@ export const Setup = () => {
               innovadores que resuelvan problemas reales.
             </Section>
 
-            <Box
+            {/* <Box
               display={"flex"}
               justifyContent={"center"}
               alignItems={"center"}
@@ -134,7 +141,7 @@ export const Setup = () => {
               >
                 Proyectos
               </Button>
-            </Box>
+            </Box> */}
           </Box>
           <Box>
             <TitleSection title="Experiencia" />
