@@ -12,7 +12,6 @@ export interface ResponseGithub {
 export const useFetchRepository = () => {
     const [username] = useState<string>("fainnerramirez");
     const [response, setResponse] = useState<Array<ResponseGithub> | null>(null);
-    const [languages, setLangages] = useState<any | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
     let timeOut: ReturnType<typeof setTimeout>;
