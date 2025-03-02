@@ -293,10 +293,6 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Proyectos",
-    href: "#"
-  },
-  {
     label: "Github",
     href: "/github"
   }

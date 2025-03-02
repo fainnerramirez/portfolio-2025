@@ -1,8 +1,8 @@
-import { Box, Heading } from "@chakra-ui/react"
-import { useFetchRepository } from "../custom/hooks/useFetcRepository";
+import { Box, Heading, Stack } from "@chakra-ui/react"
+import { useFetchRepository } from "../custom/hooks/useFetchRepository";
 import { useToast } from '@chakra-ui/react'
 import { CustomSpinner } from "./custom-spinner";
-
+import { GithubCard } from "./github-card";
 
 export const GithubRepository = () => {
     const { response, loading, error } = useFetchRepository();
@@ -20,32 +20,42 @@ export const GithubRepository = () => {
 
     if (loading) {
         return (
-            <CustomSpinner key={new Date().toLocaleDateString()} loading={loading} message="Cargando Repositorios" />
+            <CustomSpinner
+                key={new Date().toLocaleDateString()}
+                loading={loading}
+                message="Cargando Repositorios"
+            />
         )
     }
 
-    console.log("response: ", response);
+    console.log("response transformada: ", response);
 
     return (
-        <Box>
-            <Heading>Github Repositroy</Heading>
-            <ul>
+        <Box width={{ base: "100%", md: "100vw" }} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+            <Box>
+                <Heading textAlign={"center"} p={10}>Mis Repositorios</Heading>
+            </Box>
+            <Stack
+                direction={{ base: "column", md: "row" }}
+                gap={{ base: 5, md: 10 }} flexWrap={"wrap"}
+                justifyContent={"center"}
+                alignItems={{ base: "center", md: "flex-start" }}
+            >
                 {
                     response?.map((e, i) => {
                         return (
-                            <Box key={i}>
-                                <li>
-                                    <Heading>
-                                        {e.nameRepository}
-                                    </Heading>
-                                </li>
-                                <li>{e.createdAt}</li>
-                                <li>{e.avatar_url}</li>
-                            </Box>
+                            <GithubCard
+                                key={i}
+                                avatar_url={e.avatar_url}
+                                createdAt={e.createdAt}
+                                languages={e.languages}
+                                nameRepository={e.nameRepository}
+                                description={e.description}
+                            />
                         )
                     })
                 }
-            </ul>
+            </Stack>
         </Box>
     )
 }
