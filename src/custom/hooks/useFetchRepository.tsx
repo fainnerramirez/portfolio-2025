@@ -2,11 +2,12 @@ import { Octokit } from "@octokit/core";
 import { useEffect, useState } from "react";
 
 export interface ResponseGithub {
-    nameRepository: string;
-    createdAt: string | undefined;
-    avatar_url: string;
-    languages: Array<string>,
-    description: string | null
+    repo_name: string;
+    repo_createAt: string | undefined;
+    repo_avatar_url: string;
+    repo_languages: Array<string>,
+    repo_description: string | null,
+    repo_url: string
 }
 
 export const useFetchRepository = () => {
@@ -29,37 +30,28 @@ export const useFetchRepository = () => {
                         'X-GitHub-Api-Version': '2022-11-28',
                     }
                 });
+                console.log("repos: ", repos.data);
 
-                // Función para obtener los lenguajes de un repositorio
-                const getLanguagesRepository = (reponame: string) => {
-                    return API_GITHUB.request('GET /repos/{owner}/{repo}/languages', {
+                const getLanguagesRepository = async (reponame: string) => {
+                    return await API_GITHUB.request('GET /repos/{owner}/{repo}/languages', {
                         owner: 'fainnerramirez',
                         repo: reponame,
-                    })
-                        .then((response) => {
-                            console.log("Se genero la data: ", response.data)
-                            return response.data;
-                        })
-                        .catch((error) => {
-                            console.error("Error al consultar los lenguajes: ", error);
-                            return null;
-                        });
+                    });
                 };
 
-                // Obtener los lenguajes para todos los repositorios de una vez
                 const languagesPromises = repos.data.map((e: any) =>
                     getLanguagesRepository(e.name)
                 );
 
-                // Esperar a que todas las promesas de lenguajes se resuelvan
                 const languagesData = await Promise.all(languagesPromises);
-
+                
                 const dataArray: Array<ResponseGithub> = repos.data.map((e: any, i:number) => ({
-                    nameRepository: e.name,
-                    createdAt: e.created_at ? new Date(e.created_at).toISOString() : undefined,
-                    avatar_url: e.owner.avatar_url,
-                    languages: Object.keys(languagesData[i] as {}),
-                    description: e.description
+                    repo_name: e.name,
+                    repo_createAt: e.created_at ? new Date(e.created_at).toISOString() : undefined,
+                    repo_avatar_url: e.owner.avatar_url,
+                    repo_languages: Object.keys(languagesData[i] as {}),
+                    repo_description: e.description,
+                    repo_url: e.html_url
                 }));
 
                 setResponse(dataArray);

@@ -10,7 +10,7 @@ import { FaCode } from "react-icons/fa6";
 moment.locale("es");
 
 export const GithubCard: React.FC<ResponseGithub> = (props) => {
-    const { nameRepository, avatar_url, createdAt, languages, description } = props;
+    const { repo_avatar_url, repo_createAt, repo_description, repo_languages, repo_url, repo_name} = props;
 
     const getColorLanguage = (language: string) => {
         if (language.toLowerCase() === "javascript") {
@@ -32,18 +32,18 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
     }
 
     return (
-        <Card key={nameRepository} maxWidth={{ base: "95%", md: "18rem" }} height={"auto"}>
+        <Card key={repo_name} maxWidth={{ base: "95%", md: "18rem" }} height={"auto"}>
             <CardHeader display={"flex"} justifyContent={"space-between"} alignItems={"start"}>
                 <VStack>
                     <Box display={"flex"} gap={2}>
-                        <Image src={avatar_url} borderRadius={"50%"} width={30} height={30} />
+                        <Image src={repo_avatar_url} borderRadius={"50%"} width={30} height={30} />
                         <Box >
-                            <Heading size={"md"} width={"90%"}>{nameRepository}</Heading>
+                            <Heading size={"md"} width={"90%"}>{repo_name}</Heading>
                             <Box display={"flex"} gap={1} justifyContent={"start"} alignItems={"center"}>
                                 <Box>
                                     <CiCalendar />
                                 </Box>
-                                <Text fontSize={"sm"} color={"gray.400"}>{moment(createdAt).startOf('day').fromNow()}</Text>
+                                <Text fontSize={"sm"} color={"gray.400"}>{moment(repo_createAt).startOf('day').fromNow()}</Text>
                             </Box>
                         </Box>
                     </Box>
@@ -55,7 +55,7 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
             <CardBody>
                 <Stack>
                     <Box bg={useColorModeValue("teal.100", "cyan.100")} p={5} borderRadius={5}>
-                        <Text color="black">{description === null ? "Sin descripción" : description}</Text>
+                        <Text color="black">{repo_description === null ? "Sin descripción" : repo_description}</Text>
                     </Box>
                     <HStack>
                         <Box>
@@ -63,7 +63,7 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
                         </Box>
                         <Stack direction={"row"} gap={2} wrap={"wrap"}>
                             {
-                                languages.map((language, i) => {
+                                repo_languages.map((language, i) => {
                                     return (
                                         <Badge key={i} colorScheme={getColorLanguage(language)}>
                                             {language}
@@ -76,7 +76,13 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
                 </Stack>
             </CardBody>
             <CardFooter display={"flex"} justifyContent={"end"}>
-                <Button colorScheme={useColorModeValue("teal", "cyan")} rightIcon={<HiOutlineExternalLink />}>Ver en Github</Button>
+                <Button
+                    colorScheme={useColorModeValue("teal", "cyan")}
+                    rightIcon={<HiOutlineExternalLink />}
+                    onClick={() => window.open(repo_url)}
+                >
+                    Ver en Github
+                </Button>
             </CardFooter>
         </Card>
     )
