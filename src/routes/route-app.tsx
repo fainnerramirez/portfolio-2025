@@ -8,7 +8,7 @@ export const RoutesApp = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/github" element={<GithubPage />} />
+        <Route path="/repository" element={<GithubPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
