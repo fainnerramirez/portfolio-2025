@@ -28,8 +28,6 @@ export const GithubRepository = () => {
         )
     }
 
-    console.log("response transformada: ", response);
-
     return (
         <Box width={{ base: "100%", md: "100vw" }} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
             <Box>
@@ -44,15 +42,11 @@ export const GithubRepository = () => {
                 margin={"auto"}
             >
                 {
-                    response?.map((e, i) => {
+                    response?.map((e, i) => { 
                         return (
                             <GithubCard
                                 key={i}
-                                avatar_url={e.avatar_url}
-                                createdAt={e.createdAt}
-                                languages={e.languages}
-                                nameRepository={e.nameRepository}
-                                description={e.description}
+                               {...e}
                             />
                         )
                     })
