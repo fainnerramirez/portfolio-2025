@@ -40,6 +40,8 @@ export const GithubRepository = () => {
                 gap={{ base: 5, md: 10 }} flexWrap={"wrap"}
                 justifyContent={"center"}
                 alignItems={{ base: "center", md: "flex-start" }}
+                width={"95%"}
+                margin={"auto"}
             >
                 {
                     response?.map((e, i) => {
