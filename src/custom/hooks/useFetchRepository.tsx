@@ -15,9 +15,10 @@ export const useFetchRepository = () => {
     const [response, setResponse] = useState<Array<ResponseGithub> | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<string | null>(null);
-    let timeOut: ReturnType<typeof setTimeout>;
+    let timeOut: NodeJS.Timeout;
 
     useEffect(() => {
+
         const getDataApiGithub = async () => {
             try {
                 const API_GITHUB = new Octokit({
@@ -30,6 +31,7 @@ export const useFetchRepository = () => {
                         'X-GitHub-Api-Version': '2022-11-28',
                     }
                 });
+                
                 console.log("repos: ", repos.data);
 
                 const getLanguagesRepository = async (reponame: string) => {
