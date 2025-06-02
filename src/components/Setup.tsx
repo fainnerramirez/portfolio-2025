@@ -97,7 +97,7 @@ export const Setup = () => {
             <TitleSection title="Bio" />
             <Section>
               Soy estudiante de ing. de software y desarrollador de software con
-              más de 3 años de experiencia, especializado en el desarrollo de
+              más de 4 años de experiencia, especializado en el desarrollo de
               soluciones web innovadoras y escalables. A lo largo de mi carrera,
               he trabajado con tecnologías punteras como:{" "}
               <Text display={"flex"} gap={1}>
