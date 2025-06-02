@@ -18,9 +18,11 @@ export const useFetchRepository = () => {
     let timeOut: NodeJS.Timeout;
 
     useEffect(() => {
-
         const getDataApiGithub = async () => {
             try {
+                // En tu código, agrega logs para debuggear
+                console.log('Token exists:', !!import.meta.env.VITE_TOKEN_GITHUB);
+                console.log('Token starts with:', import.meta.env.VITE_TOKEN_GITHUB?.substring(0, 4));
                 const API_GITHUB = new Octokit({
                     auth: import.meta.env.VITE_TOKEN_GITHUB
                 });
@@ -31,7 +33,7 @@ export const useFetchRepository = () => {
                         'X-GitHub-Api-Version': '2022-11-28',
                     }
                 });
-                
+
                 console.log("repos: ", repos.data);
 
                 const getLanguagesRepository = async (reponame: string) => {
@@ -46,8 +48,8 @@ export const useFetchRepository = () => {
                 );
 
                 const languagesData = await Promise.all(languagesPromises);
-                
-                const dataArray: Array<ResponseGithub> = repos.data.map((e: any, i:number) => ({
+
+                const dataArray: Array<ResponseGithub> = repos.data.map((e: any, i: number) => ({
                     repo_name: e.name,
                     repo_createAt: e.created_at ? new Date(e.created_at).toISOString() : undefined,
                     repo_avatar_url: e.owner.avatar_url,
