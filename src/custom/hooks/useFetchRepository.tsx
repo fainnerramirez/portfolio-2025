@@ -32,8 +32,6 @@ export const useFetchRepository = () => {
                     }
                 });
 
-                console.log("repos: ", repos.data);
-
                 const getLanguagesRepository = async (reponame: string) => {
                     return await API_GITHUB.request('GET /repos/{owner}/{repo}/languages', {
                         owner: 'fainnerramirez',
@@ -46,7 +44,6 @@ export const useFetchRepository = () => {
                 );
 
                 const languagesData = await Promise.all(languagesPromises);
-                console.log("languagesData: ", languagesData);
 
                 const dataArray: Array<ResponseGithub> = repos.data.map((e: any, i: number) => ({
                     repo_name: e.name,
