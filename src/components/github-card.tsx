@@ -75,7 +75,7 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
                         <Box>
                             <FaCode />
                         </Box>
-                        <Container flexDir={"row"} gap={2} flexWrap={"wrap"}>
+                        <Container display={"flex"} flexDir={"row"} gap={2} flexWrap={"wrap"}>
                             {
                                 repo_languages.map((language, i) => {
                                     return (
