@@ -21,8 +21,6 @@ export const useFetchRepository = () => {
         const getDataApiGithub = async () => {
             try {
                 // En tu código, agrega logs para debuggear
-                console.log('Token exists:', !!import.meta.env.VITE_TOKEN_GITHUB);
-                console.log('Token starts with:', import.meta.env.VITE_TOKEN_GITHUB?.substring(0, 4));
                 const API_GITHUB = new Octokit({
                     auth: import.meta.env.VITE_TOKEN_GITHUB
                 });
@@ -48,12 +46,13 @@ export const useFetchRepository = () => {
                 );
 
                 const languagesData = await Promise.all(languagesPromises);
+                console.log("languagesData: ", languagesData);
 
                 const dataArray: Array<ResponseGithub> = repos.data.map((e: any, i: number) => ({
                     repo_name: e.name,
                     repo_createAt: e.created_at ? new Date(e.created_at).toISOString() : undefined,
                     repo_avatar_url: e.owner.avatar_url,
-                    repo_languages: Object.keys(languagesData[i] as {}),
+                    repo_languages: Object.keys(languagesData[i].data as {}),
                     repo_description: e.description,
                     repo_url: e.html_url
                 }));
