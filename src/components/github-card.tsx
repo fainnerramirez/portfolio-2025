@@ -5,40 +5,13 @@ import { HiOutlineExternalLink } from "react-icons/hi";
 import { CiCalendar } from "react-icons/ci";
 import { FaCode } from "react-icons/fa6";
 import moment from "moment";
-moment.locale("es");
+import { getColorLanguage } from "../utils/functions";
 
 export const GithubCard: React.FC<ResponseGithub> = (props) => {
     const { repo_avatar_url, repo_createAt, repo_description, repo_languages, repo_url, repo_name } = props;
 
-    const getColorLanguage = (language: string) => {
-        
-        if (language.toLowerCase() === "javascript") {
-            return "yellow";
-        }
-        
-        if (language.toLowerCase() === "html") {
-            return "red";
-        }
-        
-        if (language.toLowerCase() === "css" || language.toLocaleLowerCase() === "typescript") {
-            return "blue";
-        }
-        
-        if (language.toLowerCase() === "c#") {
-            return "purple";
-        }
-
-        if (language.toLowerCase() === "python") {
-            return "green";
-        }
-
-        if(language.toLowerCase() === "java"){
-            return "cyan";
-        }
-    }
-
     return (
-        <Card key={repo_name} width={{ base: "95%", md: "18rem" }} height={"auto"}>
+        <Card bg={useColorModeValue("rgb(240, 231, 219)", "gray.800")} key={repo_name} width={{ base: "95%", md: "18rem" }} height={"auto"}>
             <CardHeader display={"flex"} justifyContent={"space-between"} alignItems={"start"}>
                 <VStack>
                     <Box display={"flex"} gap={2} alignItems={"center"}>
@@ -59,16 +32,16 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
             </CardHeader>
             <CardBody>
                 <Box mb={3}>
-                    <Heading 
-                        size={"md"} 
-                        width={"90%"} 
-                        textAlign={"center"} 
+                    <Heading
+                        size={"md"}
+                        width={"90%"}
+                        textAlign={"center"}
                         minWidth={"100%"}
                         noOfLines={1}
-                        >{repo_name}</Heading>
+                    >{repo_name}</Heading>
                 </Box>
                 <Stack>
-                    <Box bg={useColorModeValue("teal.100", "cyan.100")} p={5} borderRadius={5}>
+                    <Box bg={useColorModeValue("rgba(209, 180, 142, 0.2)", "cyan.100")} p={5} borderRadius={5}>
                         <Text color="black" noOfLines={1}>{repo_description === null ? "Sin descripción" : repo_description}</Text>
                     </Box>
                     <HStack>
@@ -91,9 +64,10 @@ export const GithubCard: React.FC<ResponseGithub> = (props) => {
             </CardBody>
             <CardFooter display={"flex"} justifyContent={"center"}>
                 <Button
-                    colorScheme={useColorModeValue("teal", "cyan")}
+                    bg={useColorModeValue("rgba(209, 180, 142, 0.2)", "rgb(196, 241, 249)")}
                     rightIcon={<HiOutlineExternalLink />}
                     onClick={() => window.open(repo_url)}
+                    color={"blackAlpha.900"}
                 >
                     Ver en Github
                 </Button>
