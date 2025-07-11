@@ -118,8 +118,8 @@ export default function Navbar() {
                 cursor={'pointer'}
                 minW={0}>
                 <IconButton
-                  bg={"#A16D28"}
-                  color={"#FFFFFF"}
+                  bg={useColorModeValue("#A16D28", "cyan")}
+                  color={useColorModeValue("#FFFFFF", "#000000")}
                   size={'md'}
                   icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
                   aria-label={'Open Menu'}
@@ -127,25 +127,20 @@ export default function Navbar() {
                   onClick={isOpen ? onClose : onOpen}
                 />
               </MenuButton>
-              <MenuList bg={"#D2C1B6"}>
+              <MenuList bg={useColorModeValue("#A16D28", "cyan")}>
                 {
-                  NAV_ITEMS.map((navItem) => <MenuItem bg={"#D2C1B6"} color={"#000"} as="a"
+                  NAV_ITEMS.map((navItem) => <MenuItem bg={useColorModeValue("#A16D28", "cyan")} color={useColorModeValue("#FFFFFF", "#000000")} as="a"
                     href={navItem.href}
                     p={2}
                     fontSize={"sm"}
                     fontWeight={500}
-                  // color={linkColor}
-                  // _hover={{
-                  //   textDecoration: "none",
-                  //   color: linkHoverColor,
-                  // }}
                   >
                     {navItem.label}
                   </MenuItem>)
                 }
                 <MenuDivider />
-                <MenuItem bg={"#D2C1B6"}>
-                  <Center>@faidev</Center>
+                <MenuItem bg={useColorModeValue("#A16D28", "cyan")} color={useColorModeValue("#FFFFFF", "#000000")}>
+                  @faidev
                 </MenuItem>
               </MenuList>
             </Menu>
@@ -252,10 +247,10 @@ interface NavItem {
 }
 
 const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: "Proyectos",
-    href: "#"
-  },
+  // {
+  //   label: "Proyectos",
+  //   href: "#"
+  // },
   {
     label: "Repositorios",
     href: "/repository"
