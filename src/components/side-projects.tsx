@@ -35,7 +35,6 @@ const dataProjects: ProjectProps[] = [
 export const SideProjects = () => {
     return (
         <Container
-            overflowX={"hidden"}
             display={"flex"}
             justifyContent={"center"}
             alignItems={"center"}
