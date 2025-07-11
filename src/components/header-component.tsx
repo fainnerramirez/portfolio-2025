@@ -1,18 +1,22 @@
 import {
-  ChevronDownIcon,
   ChevronRightIcon,
   CloseIcon,
   HamburgerIcon,
 } from "@chakra-ui/icons";
 import {
+  Center,
   Box,
   Button,
-  Collapse,
   Flex,
   HStack,
   Heading,
   Icon,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuDivider,
+  MenuItem,
+  MenuList,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -29,7 +33,7 @@ import { SiOpenai } from "react-icons/si";
 import "../style/style.css";
 
 export default function Navbar() {
-  const { isOpen, onToggle } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
@@ -105,26 +109,49 @@ export default function Navbar() {
             )}
           </Button>
 
-          <Flex flex={{ base: 1, md: "auto" }} display={{ base: "none" }} p={2}>
-            <IconButton
-              onClick={onToggle}
-              icon={
-                isOpen ? (
-                  <CloseIcon w={3} h={3} />
-                ) : (
-                  <HamburgerIcon w={5} h={5} />
-                )
-              }
-              variant={"ghost"}
-              aria-label={"Toggle Navigation"}
-            />
+          <Flex flex={{ base: 1, md: "auto" }} display={{ base: "block" }} p={2}>
+            <Menu>
+              <MenuButton
+                as={Button}
+                rounded={'full'}
+                variant={'link'}
+                cursor={'pointer'}
+                minW={0}>
+                <IconButton
+                  bg={"#A16D28"}
+                  color={"#FFFFFF"}
+                  size={'md'}
+                  icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                  aria-label={'Open Menu'}
+                  display={{ md: 'none' }}
+                  onClick={isOpen ? onClose : onOpen}
+                />
+              </MenuButton>
+              <MenuList bg={"#D2C1B6"}>
+                {
+                  NAV_ITEMS.map((navItem) => <MenuItem bg={"#D2C1B6"} color={"#000"} as="a"
+                    href={navItem.href}
+                    p={2}
+                    fontSize={"sm"}
+                    fontWeight={500}
+                  // color={linkColor}
+                  // _hover={{
+                  //   textDecoration: "none",
+                  //   color: linkHoverColor,
+                  // }}
+                  >
+                    {navItem.label}
+                  </MenuItem>)
+                }
+                <MenuDivider />
+                <MenuItem bg={"#D2C1B6"}>
+                  <Center>@faidev</Center>
+                </MenuItem>
+              </MenuList>
+            </Menu>
           </Flex>
         </HStack>
       </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
     </Box>
   );
 }
@@ -217,73 +244,6 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   );
 };
 
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
-        as="a"
-        href={href ?? "#"}
-        justifyContent="space-between"
-        alignItems="center"
-        _hover={{
-          textDecoration: "none",
-        }}
-      >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
-          align={"start"}
-        >
-          {children &&
-            children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
-  );
-};
-
 interface NavItem {
   label: string;
   subLabel?: string;
@@ -293,7 +253,11 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Github",
+    label: "Proyectos",
+    href: "#"
+  },
+  {
+    label: "Repositorios",
     href: "/repository"
   }
 ];
