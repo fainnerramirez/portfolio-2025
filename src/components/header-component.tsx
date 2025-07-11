@@ -4,7 +4,6 @@ import {
   HamburgerIcon,
 } from "@chakra-ui/icons";
 import {
-  Center,
   Box,
   Button,
   Flex,
