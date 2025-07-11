@@ -1,0 +1,51 @@
+import { Container, Stack } from "@chakra-ui/react"
+import { Project, ProjectProps } from "./project"
+import ColorSnatchImage from "../assets/projects/colorsnatch.png";
+import ChakraUIChartsImage from "../assets/projects/chakrauicharts.png";
+import SQLmindImage from "../assets/projects/sqlmind.png";
+import ChatifyImage from "../assets/projects/chatify.png";
+
+const dataProjects: ProjectProps[] = [
+    {
+        title: "Color Snatch",
+        content: "Extensión de google chrome para obtener el color de cualquier texto en las páginas web",
+        imageSrc: ColorSnatchImage,
+        demoUrl: "https://www.linkedin.com/posts/activity-7314857929046712320-Uhlr?utm_source=share&utm_medium=member_desktop&rcm=ACoAADf8rp4BVBMEawcWEChYg0iPLDCSCZDhl8Y"
+    },
+    {
+        title: "Chakra + Recharts",
+        content: "Combinación de las libreria de Chakra UI y de gráficas Recharts para proyectos React Open Source",
+        imageSrc: ChakraUIChartsImage,
+        demoUrl: "https://chakraui-charts.vercel.app/"
+    },
+    {
+        title: "SQL Mind",
+        content: "Escribe lo que quieres en lenguaje natural y te lo devuelve en el lenguaje de consulta de SQL",
+        imageSrc: SQLmindImage,
+        demoUrl: "https://sqlmind.vercel.app/"
+    },
+    {
+        title: "Chatify",
+        content: "Chat minimalista que ofrece respuestas personalidas desarrollado con IA",
+        imageSrc: ChatifyImage,
+        demoUrl: "https://www.linkedin.com/posts/activity-7329652380084432896-J4vO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADf8rp4BVBMEawcWEChYg0iPLDCSCZDhl8Y"
+    }
+]
+
+export const SideProjects = () => {
+    return (
+        <Container
+            overflowX={"hidden"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            flexWrap={"wrap"}
+            gap={5}
+            maxWidth={"3xl"}
+        >
+            {
+                dataProjects.map((project) => <Project {...project} />)
+            }
+        </Container>
+    )
+}
