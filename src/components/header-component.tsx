@@ -137,7 +137,7 @@ export default function Navbar() {
                     {navItem.label}
                   </MenuItem>)
                 }
-                <MenuDivider />
+                <MenuDivider borderColor={useColorModeValue("#FFFFFF", "#000000")} />
                 <MenuItem bg={useColorModeValue("#A16D28", "cyan")} color={useColorModeValue("#FFFFFF", "#000000")}>
                   @faidev
                 </MenuItem>
