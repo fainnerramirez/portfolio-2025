@@ -1,4 +1,4 @@
-import { Container, Stack } from "@chakra-ui/react"
+import { Container } from "@chakra-ui/react"
 import { Project, ProjectProps } from "./project"
 import ColorSnatchImage from "../assets/projects/colorsnatch.png";
 import ChakraUIChartsImage from "../assets/projects/chakrauicharts.png";

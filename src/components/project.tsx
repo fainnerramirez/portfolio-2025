@@ -1,4 +1,4 @@
-import { Button, Card, CardBody, CardFooter, Divider, Heading, Image, Stack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Card, CardBody, Heading, Image, Stack, Text, useColorModeValue } from "@chakra-ui/react";
 
 export type ProjectProps = {
     title: string,
