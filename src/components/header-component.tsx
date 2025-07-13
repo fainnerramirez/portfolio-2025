@@ -29,6 +29,7 @@ import {
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
 import { SiOpenai } from "react-icons/si";
+import { Link } from "react-router-dom";
 import "../style/style.css";
 
 export default function Navbar() {
@@ -66,8 +67,8 @@ export default function Navbar() {
               color={useColorModeValue("gray.800", "white")}
               fontSize={{ base: "sm", md: "md", lg: "xl" }}
               noOfLines={1}
-              as="a"
-              href="/"
+              as={Link}
+              to="/"
               _hover={{
                 color: "teal.400",
               }}
@@ -128,8 +129,8 @@ export default function Navbar() {
               </MenuButton>
               <MenuList bg={useColorModeValue("#A16D28", "cyan")}>
                 {
-                  NAV_ITEMS.map((navItem) => <MenuItem bg={useColorModeValue("#A16D28", "cyan")} color={useColorModeValue("#FFFFFF", "#000000")} as="a"
-                    href={navItem.href}
+                  NAV_ITEMS.map((navItem) => <MenuItem bg={useColorModeValue("#A16D28", "cyan")} color={useColorModeValue("#FFFFFF", "#000000")} as={Link}
+                    to={navItem.href}
                     p={2}
                     fontSize={"sm"}
                     fontWeight={500}
@@ -162,8 +163,8 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Box
-                as="a"
-                href={navItem.href}
+                as={Link}
+                to={navItem.href}
                 p={2}
                 fontSize={"sm"}
                 fontWeight={500}
@@ -203,8 +204,8 @@ const DesktopNav = () => {
 const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
   return (
     <Box
-      as="a"
-      href={href}
+      as={Link}
+      to={href}
       role={"group"}
       display={"block"}
       p={2}
