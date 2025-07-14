@@ -15,7 +15,7 @@ export const Project: React.FC<ProjectProps> = ({ imageSrc, title, content, demo
             m={2}
             bg={useColorModeValue("rgb(240, 231, 219)", "gray.800")}
             _hover={{
-                bg: useColorModeValue("rgba(240, 231, 219, 0.5)", "gray.700")
+                bg: useColorModeValue("rgba(240, 231, 219, 0.3)", "gray.700")
             }}
             onClick={() => window.open(demoUrl)}>
             <CardBody>

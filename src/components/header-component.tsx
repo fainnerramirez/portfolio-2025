@@ -11,6 +11,7 @@ import {
   Heading,
   Icon,
   IconButton,
+  Image,
   Menu,
   MenuButton,
   MenuDivider,
@@ -28,8 +29,8 @@ import {
 } from "@chakra-ui/react";
 import { IoSunnyOutline } from "react-icons/io5";
 import { LuSunMoon } from "react-icons/lu";
-import { SiOpenai } from "react-icons/si";
 import { Link } from "react-router-dom";
+import logoPortfolio from "../assets/logo-portfolio-svg.svg";
 import "../style/style.css";
 
 export default function Navbar() {
@@ -52,15 +53,9 @@ export default function Navbar() {
       >
         <Flex flex={{ base: 1 }} justify={{ base: "start", md: "start" }}>
           <HStack display={"flex"} alignItems={"center"}>
-            <Button
-              bg={"trasnparent"}
-              pointerEvents={"none"}
-              size={{ base: "md" }}
-              p={0}
-              m={0}
-            >
-              <SiOpenai size={"md"} />
-            </Button>
+            <Box>
+              <Image src={logoPortfolio} width={45} height={45} />
+            </Box>
             <Heading
               textAlign={useBreakpointValue({ base: "center", md: "left" })}
               fontWeight={600}
