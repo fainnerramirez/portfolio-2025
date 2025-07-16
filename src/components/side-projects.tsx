@@ -1,9 +1,10 @@
-import { Container } from "@chakra-ui/react"
-import { Project, ProjectProps } from "./project"
-import ColorSnatchImage from "../assets/projects/colorsnatch.png";
+import { Container } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 import ChakraUIChartsImage from "../assets/projects/chakrauicharts.png";
-import SQLmindImage from "../assets/projects/sqlmind.png";
 import ChatifyImage from "../assets/projects/chatify.png";
+import ColorSnatchImage from "../assets/projects/colorsnatch.png";
+import SQLmindImage from "../assets/projects/sqlmind.png";
+import { Project, ProjectProps } from "./project";
 
 const dataProjects: ProjectProps[] = [
     {
@@ -42,6 +43,10 @@ export const SideProjects = () => {
             gap={5}
             maxWidth={"3xl"}
         >
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Fainner Ramirez - Proyectos</title>
+            </Helmet>
             {
                 dataProjects.map((project) => <Project {...project} />)
             }

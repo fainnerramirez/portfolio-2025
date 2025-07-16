@@ -11,7 +11,7 @@ const HomePage = () => {
     >
       <Helmet>
         <meta charSet="utf-8" />
-        <title>Fainner Ramirez - HomePage</title>
+        <title>Fainner Ramirez - Página Principal</title>
       </Helmet>
       <Setup />
     </Box>

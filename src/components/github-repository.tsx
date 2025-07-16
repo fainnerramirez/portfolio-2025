@@ -1,6 +1,6 @@
-import { Box, Heading, Stack } from "@chakra-ui/react"
+import { Box, Heading, Stack, useToast } from "@chakra-ui/react";
+import { Helmet } from "react-helmet";
 import { useFetchRepository } from "../custom/hooks/useFetchRepository";
-import { useToast } from '@chakra-ui/react'
 import { CustomSpinner } from "./custom-spinner";
 import { GithubCard } from "./github-card";
 
@@ -30,6 +30,10 @@ export const GithubRepository = () => {
 
     return (
         <Box width={{ base: "100%", md: "100vw" }} display={"flex"} justifyContent={"center"} alignItems={"center"} flexDirection={"column"}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>Fainner Ramirez - Repositorios</title>
+            </Helmet>
             <Box>
                 <Heading textAlign={"center"} p={10}>Mis Repositorios</Heading>
             </Box>
@@ -42,11 +46,11 @@ export const GithubRepository = () => {
                 margin={"auto"}
             >
                 {
-                    response?.map((e, i) => { 
+                    response?.map((e, i) => {
                         return (
                             <GithubCard
                                 key={i}
-                               {...e}
+                                {...e}
                             />
                         )
                     })
