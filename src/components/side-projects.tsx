@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import ChakraUIChartsImage from "../assets/projects/chakrauicharts.png";
 import ChatifyImage from "../assets/projects/chatify.png";
 import ColorSnatchImage from "../assets/projects/colorsnatch.png";
+import SQLMindCLIImage from "../assets/projects/sqlmind-cli.png";
 import SQLmindImage from "../assets/projects/sqlmind.png";
 import { Project, ProjectProps } from "./project";
 
@@ -30,6 +31,12 @@ const dataProjects: ProjectProps[] = [
         content: "Chat minimalista que ofrece respuestas personalidas desarrollado con IA",
         imageSrc: ChatifyImage,
         demoUrl: "https://www.linkedin.com/posts/activity-7329652380084432896-J4vO?utm_source=share&utm_medium=member_desktop&rcm=ACoAADf8rp4BVBMEawcWEChYg0iPLDCSCZDhl8Y"
+    },
+    {
+        title: "Sqlmind CLI",
+        content: "Herramienta de terminal para genera consultas sql a partir del lenguaje natural",
+        imageSrc: SQLMindCLIImage,
+        demoUrl: "https://www.linkedin.com/posts/activity-7355346335778185216-6X9u?utm_source=share&utm_medium=member_desktop&rcm=ACoAADf8rp4BVBMEawcWEChYg0iPLDCSCZDhl8Y"
     }
 ]
 
