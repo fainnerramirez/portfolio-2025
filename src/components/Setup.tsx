@@ -77,9 +77,10 @@ export const Setup = () => {
     >
       <Stack
         direction={{ base: "column", lg: "column" }}
-        width={{ base: "100%", md: "40%" }}
+        width={{ base: "100%", md: "55%" }}
         display={"flex"}
         alignItems={"center"}
+        justifyContent={"center"}
         margin={"auto"}
       >
         <Box mt={5}>

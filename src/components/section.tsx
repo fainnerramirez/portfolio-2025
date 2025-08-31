@@ -13,7 +13,7 @@ export const Section: React.FC<Props> = ({ children, key }) => {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -10, opacity: 0 }}
       transition={{ duration: 1.5 }}
-      style={{ marginTop: 10 }}
+      style={{ marginTop: 10, width: "100%" }}
     >
       {children}
     </motion.div>

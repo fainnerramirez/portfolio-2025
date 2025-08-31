@@ -37,7 +37,7 @@ export const Experience: React.FC<Experiences> = ({ data }) => {
             >
               <Stack
                 direction={{ base: "column", md: "row" }}
-                mt={{ base: 4, md: 0 }}
+                mt={{ base: 4, md: 2 }}
               >
                 <HStack spacing={{ base: 1, md: 2 }}>
                   <ListIcon as={MdOutlineWorkOutline} />
