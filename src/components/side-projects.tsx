@@ -1,5 +1,6 @@
 import { Container } from "@chakra-ui/react";
 import { Helmet } from "react-helmet";
+import AtlasAI from "../assets/projects/atlas-ai.png";
 import ChakraUIChartsImage from "../assets/projects/chakrauicharts.png";
 import ChatifyImage from "../assets/projects/chatify.png";
 import ColorSnatchImage from "../assets/projects/colorsnatch.png";
@@ -8,6 +9,12 @@ import SQLmindImage from "../assets/projects/sqlmind.png";
 import { Project, ProjectProps } from "./project";
 
 const dataProjects: ProjectProps[] = [
+    {
+        title: "Atlas AI",
+        content: "App web que permite explorar el mundo usando inteligencia artificial",
+        imageSrc: AtlasAI,
+        demoUrl: "https://atlas-ai-v2.vercel.app/"
+    },
     {
         title: "Color Snatch",
         content: "Extensión de google chrome para obtener el color de cualquier texto en las páginas web",
