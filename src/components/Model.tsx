@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 const Model = () => {
   const { scene } = useGLTF("/mac-draco.glb");
-  const modelRef = useRef<any>();
+  const modelRef = useRef<any | null>(null);
 
   // Rotar indefinidamente en cada frame
   useFrame(() => {
