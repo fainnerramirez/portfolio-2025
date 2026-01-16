@@ -1,13 +1,16 @@
+import moment from "moment";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { HelmetProvider } from "react-helmet-async";
 import { App } from "./App.tsx";
-import moment from "moment";
 // @ts-ignore
 import "moment/locale/es";
 moment.locale("es");
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </StrictMode>
 );

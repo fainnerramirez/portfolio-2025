@@ -1,14 +1,28 @@
 import { Container } from "@chakra-ui/react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import AtlasAI from "../assets/projects/atlas-ai.png";
 import ChakraUIChartsImage from "../assets/projects/chakrauicharts.png";
 import ChatifyImage from "../assets/projects/chatify.png";
 import ColorSnatchImage from "../assets/projects/colorsnatch.png";
 import SQLMindCLIImage from "../assets/projects/sqlmind-cli.png";
 import SQLmindImage from "../assets/projects/sqlmind.png";
+import TargetScan from "../assets/projects/target-scan.png";
+import HUInspector from "../assets/projects/hu-inspector.png";
 import { Project, ProjectProps } from "./project";
 
 const dataProjects: ProjectProps[] = [
+    {
+        title: "Target Scan",
+        content: "Agente que asegura que las implementaciones de Adobe Target sean robustas, eficientes y cumplan con las mejores prácticas de la empresa de Avianca",
+        imageSrc: TargetScan,
+        demoUrl: "https://target-scan.vercel.app/"
+    },
+    {
+        title: "HU Inspector",
+        content: "Agente que inspecciona las historias de usuario en Jira y Azure para asegurar que cumplan con las mejores prácticas de redacción de historias de usuario",
+        imageSrc: HUInspector,
+        demoUrl: "https://hu-inspector.vercel.app/"
+    }
     {
         title: "Atlas AI",
         content: "App web que permite explorar el mundo usando inteligencia artificial",

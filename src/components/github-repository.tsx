@@ -1,5 +1,5 @@
 import { Box, Heading, Stack, useToast } from "@chakra-ui/react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { useFetchRepository } from "../custom/hooks/useFetchRepository";
 import { CustomSpinner } from "./custom-spinner";
 import { GithubCard } from "./github-card";
