@@ -10,6 +10,7 @@ import SQLmindImage from "../assets/projects/sqlmind.png";
 import TargetScan from "../assets/projects/target-scan.png";
 import { Project, ProjectProps } from "./project";
 
+//proyectos de fainner
 const dataProjects: ProjectProps[] = [
     {
         title: "Target Scan",
